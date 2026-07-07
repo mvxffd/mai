@@ -6,7 +6,7 @@ VERSION="3.4"
 DEBUG=false
 LOG_FILE="/data/local/tmp/root_toolbox.log"
 # 更新配置（请替换为你的实际URL）
-UPDATE_URL="https://github.com/mvxffd/mai.git"
+UPDATE_URL="https://github.com/mvxffd/mai/blob/9442433af2bea50a5256fa7fba78cedc7fae57e4/7.sh"
 UPDATE_CHECK_INTERVAL=86400
 LAST_CHECK_FILE="/data/local/tmp/.last_update_check"
 # ---------- 颜色定义 ----------
