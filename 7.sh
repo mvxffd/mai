@@ -1,8 +1,8 @@
 #!/system/bin/sh
 # ============================================
-# Root工具箱 - 自动更新版 v3.6
+# Root工具箱 - 自动更新版 v3.7
 # ============================================
-VERSION="3.6"
+VERSION="3.7"
 DEBUG=false
 LOG_FILE="/data/local/tmp/root_toolbox.log"
 # 更新配置（请替换为你的实际URL）
@@ -478,7 +478,7 @@ menu_png_batch() {
                         copy_success=\$((copy_success + 1))
                     else
                         echo \"❌ \${name}.png (复制失败)\"
-                        copy_failed=\$((copy_failed + 1))
+                        copy_failed=\$((copy_success + 1))
                     fi
                 done
                 echo \"📊 复制完成: 成功 \$copy_success 个，失败 \$copy_failed 个\"
