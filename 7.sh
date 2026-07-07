@@ -529,45 +529,7 @@ menu_clean_cache() {
     esac
     wait_return
 }
-# ---------- 主程序入口【移除死循环自迁移】 ----------
-main() {
-    trap 'echo -e "\n${YELLOW}脚本被中断${RESET}"; exit 1' INT TERM
-    check_root
-    log "========== Root工具箱 v$VERSION 启动 =========="
-    check_update
-    while true; do
-        show
-        read key 2>/dev/null
-        echo ""
-        case "$key" in
-            u|U)
-                check_update force
-                wait_return
-                continue
-                ;;
-        esac
-        case "$key" in
-            1) menu_europe ;;
-            2) start_app "com.omarea.vtools" && wait_return ;;
-            3) start_app "com.android.settings" && wait_return ;;
-            4) start_app "com.tencent.mm" ".ui.LauncherUI" && wait_return ;;
-            5)
-                echo -e "${GREEN}正在退出脚本...${RESET}"
-                log "脚本正常退出"
-                exit 0
-                ;;
-            6) menu_device_info ;;
-            7) menu_png_batch ;;
-            8) menu_clean_cache ;;
-            *)
-                if [ -n "$key" ]; then
-                    echo -e "${RED}输入错误，请重新选择！${RESET}"
-                    sleep 1
-                fi
-        esac
-    done
-}
-# 修复笔误show → show_menu
+# ---------- 主程序入口 ----------
 main() {
     trap 'echo -e "\n${YELLOW}脚本被中断${RESET}"; exit 1' INT TERM
     check_root
